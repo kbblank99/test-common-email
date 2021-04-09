@@ -53,4 +53,11 @@ public class EmailTest {
 		assertEquals(3, email.getCcAddresses().size());
 	}
 
+	@Test
+	public void testAddHeader() throws Exception{
+		email.addHeader(testValidChars[0], testValidChars[4]);
+		
+		email.addHeader(testNull, testValidChars[2]);
+	}
+
 }
