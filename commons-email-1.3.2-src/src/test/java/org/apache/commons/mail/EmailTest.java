@@ -123,4 +123,10 @@ public class EmailTest {
 		
 	}
 
+	@Test
+	public void getSocketConnectionTimeout() {
+		email.setSocketConnectionTimeout(10);
+		int temp = email.getSocketConnectionTimeout();
+	}
+
 }
