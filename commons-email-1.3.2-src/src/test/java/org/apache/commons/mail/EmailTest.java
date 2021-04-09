@@ -116,4 +116,11 @@ public class EmailTest {
         }
 	}
 
+	@Test
+	public void testGetSentDate() throws Exception{
+		email.setSentDate(null);
+		Date sentDate = (Date) email.getSentDate();
+		
+	}
+
 }
