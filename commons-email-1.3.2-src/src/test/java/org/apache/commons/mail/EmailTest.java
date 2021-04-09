@@ -65,4 +65,20 @@ public class EmailTest {
 		email.addReplyTo(TEST_EMAIL[1], testValidChars[1]);
 	}
 
+	@Test
+	public void testBuildMimeMessage() throws Exception{
+		email.setHostName("hostName");
+        email.setSmtpPort(1234);
+        email.setFrom("a@b.com");
+        email.addTo("a@b.com");
+        email.setSubject("test mail");
+        email.setCharset("ISO-8859-1");
+        email.setContent("test content", "text/plain");
+        email.addCc("a@b.com");
+        email.addBcc("a@b.com");
+        email.addHeader("test", "abc");
+        email.addReplyTo(TEST_EMAIL[1], testValidChars[1]);
+        email.buildMimeMessage();
+	}
+
 }
