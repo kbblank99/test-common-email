@@ -94,4 +94,26 @@ public class EmailTest {
 		assertEquals(null, host);
 	}
 
+	@Test
+	public void testGetMailSession() throws Exception{
+		Properties properties = new Properties(System.getProperties());
+        properties.setProperty(EmailConstants.MAIL_TRANSPORT_PROTOCOL, EmailConstants.SMTP);
+        properties.setProperty("a@b.com", "a@b.com");
+        properties.setProperty(EmailConstants.MAIL_HOST, testValidChars[1]);
+        properties.setProperty(EmailConstants.MAIL_DEBUG, String.valueOf(false));
+        Session mySession = Session.getInstance(properties, null);
+        this.email.setMailSession(mySession);
+        assertEquals(mySession, this.email.getMailSession());
+        
+        try
+        {
+            this.email = new EmailConcrete();
+            this.email.send();
+        }
+        catch (EmailException e)
+        {
+            assertTrue(true);
+        }
+	}
+
 }
