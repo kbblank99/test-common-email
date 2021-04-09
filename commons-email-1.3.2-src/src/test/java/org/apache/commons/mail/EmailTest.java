@@ -129,4 +129,9 @@ public class EmailTest {
 		int temp = email.getSocketConnectionTimeout();
 	}
 
+	@Test
+	public void testSetFrom() throws Exception{
+		email.setFrom("a@b.com");
+	}
+
 }
