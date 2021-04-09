@@ -60,4 +60,9 @@ public class EmailTest {
 		email.addHeader(testNull, testValidChars[2]);
 	}
 
+	@Test
+	public void testAddReplyTo() throws Exception{
+		email.addReplyTo(TEST_EMAIL[1], testValidChars[1]);
+	}
+
 }
